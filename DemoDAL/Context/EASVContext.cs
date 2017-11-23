@@ -1,17 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using DemoDAL.Entities;
 
 namespace DemoDAL.Context
 {
-    class EASVContext : DbContext
+    public class EASVContext : DbContext
     {
-        public EASVContext(DbContextOptions<EASVContext> options): base(options)  { }
+        public EASVContext(DbContextOptions<EASVContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
 
-        //public DbSet<Entity> Entites { get; set; }
-       
+        public DbSet<Product> Products { get; set; }
+
     }
 }
