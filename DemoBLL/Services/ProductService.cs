@@ -56,14 +56,23 @@ namespace DemoBLL.Services
                 return uow.ProductRepository.GetAll().Select(p => Pconv.Convert(p)).ToList();
             }
         }
-        /*
-        public ProductBO Update(ProductBO bo)
+
+        public ProductBO Update(ProductBO prod)
         {
             using (var uow = facade.UnitOfWork)
             {
+                var ProductFromDb = uow.ProductRepository.Get(prod.Id);
+                if (ProductFromDb == null)
+                {
+                    throw new InvalidOperationException("Product not found");
+                }
+                ProductFromDb.Id = prod.Id;
+                ProductFromDb.Name = prod.Name;
+                ProductFromDb.Type = prod.Type;
 
+                uow.Complete();
+                return Pconv.Convert(ProductFromDb);
             }
         }
-*/
     }
 }
