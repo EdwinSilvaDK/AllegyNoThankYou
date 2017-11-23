@@ -33,7 +33,7 @@ namespace DemoBLL.Services
         {
             using (var uow = facade.UnitOfWork)
             {
-                var newProd = uow.ProductRepository.Delete(id);
+                var newProd = uow.ProductRepository.Delete(Id);
                 uow.Complete();
                 return Pconv.Convert(newProd);
 
@@ -56,14 +56,23 @@ namespace DemoBLL.Services
                 return uow.ProductRepository.GetAll().Select(p => Pconv.Convert(p)).ToList();
             }
         }
-        /*
-        public ProductBO Update(ProductBO bo)
+
+        public ProductBO Update(ProductBO prod)
         {
             using (var uow = facade.UnitOfWork)
             {
-
+                var prodructFromDb = uow.ProductRepository.Get(prod.Id);
+                if (prodructFromDb == null)
+                {
+                    throw new InvalidOperationException("Product not found");
+                }
+                prodructFromDb.Id = prod.Id;
+                prodructFromDb.Name = prod.Name;
+                prodructFromDb.Type = prod.Type;
+                uow.Complete();
+                return Pconv.Convert(prodructFromDb);
             }
         }
-*/
+
     }
 }
