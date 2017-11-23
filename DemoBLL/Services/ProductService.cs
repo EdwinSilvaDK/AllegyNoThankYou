@@ -1,39 +1,69 @@
 ﻿using System;
 using System.Collections.Generic;
 using DemoBLL.BusinessObjects;
+using DemoDAL;
 using DemoDAL.Entities;
+using DemoBLL.Converters;
+using System.Linq;
 
 namespace DemoBLL.Services
 {
     public class ProductService : IProductService
     {
-        public ProductService()
+        IDALFacade facade;
+        private ProductConverter Pconv = new ProductConverter();
+
+        public ProductService(IDALFacade facade)
         {
+            this.facade = facade;
         }
 
-        public Product Create(Product bo)
+        public ProductBO Create(ProductBO prod)
         {
-            throw new NotImplementedException();
+            using (var uow = facade.UnitOfWork)
+            {
+                var newProd = uow.ProductRepository.Create(Pconv.Convert(prod));
+                uow.Complete();
+                return Pconv.Convert(newProd);
+
+            }
         }
 
-        public Product Delete(int Id)
+        public ProductBO Delete(int Id)
         {
-            throw new NotImplementedException();
+            using (var uow = facade.UnitOfWork)
+            {
+                var newProd = uow.ProductRepository.Delete(id);
+                uow.Complete();
+                return Pconv.Convert(newProd);
+
+            }
+
         }
 
-        public Product Get(int Id)
+        public ProductBO Get(int Id)
         {
-            throw new NotImplementedException();
+            using (var uow = facade.UnitOfWork)
+            {
+                return Pconv.Convert(uow.ProductRepository.Get(Id));
+            }
         }
 
-        public List<Product> GetAll()
+        public List<ProductBO> GetAll()
         {
-            throw new NotImplementedException();
+            using (var uow = facade.UnitOfWork)
+            {
+                return uow.ProductRepository.GetAll().Select(p => Pconv.Convert(p)).ToList();
+            }
         }
+        /*
+        public ProductBO Update(ProductBO bo)
+        {
+            using (var uow = facade.UnitOfWork)
+            {
 
-        public Product Update(Product bo)
-        {
-            throw new NotImplementedException();
+            }
         }
+*/
     }
 }
