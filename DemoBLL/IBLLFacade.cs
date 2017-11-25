@@ -1,10 +1,11 @@
 ﻿using System;
 using DemoDAL;
+using DemoBLL.Services;
 namespace DemoBLL
 {
     public interface IBLLFacade
     {
         IProductService ProductService { get; }
-        IIngredientRepository IngredientRepository { get; }
+        IIngredientService IngredientService { get; }
     }
 }
