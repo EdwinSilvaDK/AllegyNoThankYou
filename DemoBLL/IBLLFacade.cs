@@ -1,8 +1,10 @@
 ﻿using System;
+using DemoDAL;
 namespace DemoBLL
 {
     public interface IBLLFacade
     {
-        //ICustomerService CustomerService { get { return new CustomerService(facade); }
+        IProductService ProductService { get; }
+        IIngredientRepository IngredientRepository { get; }
     }
 }

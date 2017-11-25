@@ -4,7 +4,7 @@ using DemoDAL.Entities;
 
 namespace DemoBLL
 {
-    public interface IProductService : IService<Product>
+    public interface IProductService : IService<ProductBO>
     {
     }
 }
