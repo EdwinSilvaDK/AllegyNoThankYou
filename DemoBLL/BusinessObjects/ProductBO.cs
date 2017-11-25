@@ -8,3 +8,4 @@ namespace DemoBLL.BusinessObjects
         public string Name { get; set; }
     }
 }
+    
