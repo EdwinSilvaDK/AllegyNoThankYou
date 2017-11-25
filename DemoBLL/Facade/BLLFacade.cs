@@ -26,7 +26,7 @@ namespace DemoBLL.Facade
         }
         public IIngredientService IngredientService
         {
-            get { return new IngredientRepository(facade); }
+            get { return new IngredientService(facade); }
         }
     }
 }
