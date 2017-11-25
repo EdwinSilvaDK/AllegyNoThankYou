@@ -33,7 +33,7 @@ namespace DemoBLL.Services
         {
             using (var uow = facade.UnitOfWork)
             {
-                var newProd = uow.ProductRepository.Delete(id);
+                var newProd = uow.ProductRepository.Delete(Id);
                 uow.Complete();
                 return Pconv.Convert(newProd);
 

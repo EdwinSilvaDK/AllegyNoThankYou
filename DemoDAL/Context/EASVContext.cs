@@ -13,6 +13,6 @@ namespace DemoDAL.Context
         }
 
         public DbSet<Product> Products { get; set; }
-
+        public DbSet<Ingredient> Ingredients { get; set; }
     }
 }
