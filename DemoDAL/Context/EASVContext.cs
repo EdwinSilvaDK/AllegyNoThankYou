@@ -14,5 +14,6 @@ namespace DemoDAL.Context
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Allergy> Allergies { get; set; }
     }
 }

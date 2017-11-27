@@ -1,7 +1,9 @@
 ﻿using System;
+using DemoDAL.Entities;
 namespace DemoDAL
 {
-    public interface IAllergyRepository
+    public interface IAllergyRepository : IRepository<Allergy>
     {
+
     }
 }
