@@ -11,7 +11,7 @@ namespace DemoDAL.Entities
         public string Type { get; set; }
         public string Name { get; set; }
 
-        public List<Ingredient> Ingredients { get; set; }
+        public List<ProductIngredient> Ingredients { get; set; }
     }
 
 }

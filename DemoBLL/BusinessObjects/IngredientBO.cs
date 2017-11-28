@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace DemoBLL.BusinessObjects
 {
     public class IngredientBO : IBusinessObject
@@ -10,5 +11,6 @@ namespace DemoBLL.BusinessObjects
         public int Id { get; set; }
         public string Name { get; set; }
         public int AllergyId { get; set; }
+        public List<IngredientBO> Ingredients { get; set; }
     }
 }

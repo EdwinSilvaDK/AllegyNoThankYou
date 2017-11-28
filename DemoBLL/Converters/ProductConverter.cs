@@ -1,13 +1,15 @@
 ﻿using System;
 using DemoDAL.Entities;
 using DemoBLL.BusinessObjects;
+using System.Linq;
 namespace DemoBLL.Converters
 {
     public class ProductConverter : IConverter<Product, ProductBO>
     {
+        private IngredientConverter Iconv;
         public ProductConverter()
         {
-
+            Iconv = new IngredientConverter();
         }
 
         public Product Convert(ProductBO prod)
@@ -18,6 +20,11 @@ namespace DemoBLL.Converters
                 Id = prod.Id,
                 Name = prod.Name,
                 Type = prod.Type,
+                Ingredients = prod.Ingredients?.Select(I => new ProductIngredient()
+                {
+                    IngredientId = I.Id,
+                    ProductId = prod.Id,
+                }).ToList(),
             };
         }
 
@@ -29,6 +36,13 @@ namespace DemoBLL.Converters
                 Id = prod.Id,
                 Name = prod.Name,
                 Type = prod.Type,
+                Ingredients = prod.Ingredients?.Select(I => new IngredientBO()
+                {
+                    Id = I.ProductId,
+                    Name = I.Ingredient?.Name,
+
+                }).ToList(),
+
             };
         }
     }

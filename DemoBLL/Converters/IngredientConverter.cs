@@ -18,6 +18,7 @@ namespace DemoBLL.Converters
                 Id = ind.Id,
                 Name = ind.Name,
                 AllergyId = ind.AllergyId,
+
             };
         }
 

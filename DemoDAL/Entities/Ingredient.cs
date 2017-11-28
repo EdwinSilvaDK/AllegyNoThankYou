@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace DemoDAL.Entities
 {
     public class Ingredient : IEntity
@@ -11,7 +12,6 @@ namespace DemoDAL.Entities
         public string Name { get; set; }
         public int AllergyId { get; set; }
 
-        public Product product { get; set; }
-        public int ProductId { get; set; }
+        public List<ProductIngredient> Products { get; set; }
     }
 }

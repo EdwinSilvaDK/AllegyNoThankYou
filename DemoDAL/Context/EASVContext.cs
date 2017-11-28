@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using DemoDAL.Entities;
+using System.Collections.Generic;
+
 
 namespace DemoDAL.Context
 {
@@ -13,8 +15,21 @@ namespace DemoDAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // configures one-to-many relationship
-            modelBuilder.Entity<Product>().HasMany()
+            modelBuilder.Entity<ProductIngredient>()
+                        .HasKey(pi => new { pi.ProductId, pi.IngredientId });
+
+
+            modelBuilder.Entity<ProductIngredient>()
+                        .HasOne(pi => pi.Product)
+                        .WithMany(I => I.Ingredients)
+                        .HasForeignKey(pi => pi.ProductId);
+
+            modelBuilder.Entity<ProductIngredient>()
+                        .HasOne(pi => pi.Ingredient)
+                        .WithMany(p => p.Products)
+                        .HasForeignKey(pi => pi.IngredientId);
+
+
 
 
         }

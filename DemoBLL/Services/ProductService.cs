@@ -66,10 +66,11 @@ namespace DemoBLL.Services
                 {
                     throw new InvalidOperationException("Product not found");
                 }
-                ProductFromDb.Id = prod.Id;
-                ProductFromDb.Name = prod.Name;
-                ProductFromDb.Type = prod.Type;
-
+                var productUpdated = Pconv.Convert(prod);
+                ProductFromDb.Id = productUpdated.Id;
+                ProductFromDb.Name = productUpdated.Name;
+                ProductFromDb.Type = productUpdated.Type;
+                ProductFromDb.Ingredients = productUpdated.Ingredients;
                 uow.Complete();
                 return Pconv.Convert(ProductFromDb);
             }
