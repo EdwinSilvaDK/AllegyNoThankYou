@@ -1,4 +1,5 @@
 ﻿using DemoBLL;
+using DemoBLL.BusinessObjects;
 using DemoBLL.Facade;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,12 +48,21 @@ namespace CustomerRestAPI
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             
+
             if (env.IsDevelopment())
             {
 				loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 				loggerFactory.AddDebug();
 
 				app.UseDeveloperExceptionPage();
+
+                var facade = new BLLFacade(Configuration);
+                var pro = facade.ProductService.Create(
+                    new ProductBO()
+                    {
+                        Name = "Milk",
+                        Type = "Dairy"
+                    });
             }
 
             app.UseMvc();
