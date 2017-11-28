@@ -7,13 +7,18 @@ namespace DemoDAL.Context
     {
         public EASVContext(DbContextOptions<EASVContext> options) : base(options) { }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
-
         public DbSet<Product> Products { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Allergy> Allergies { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // configures one-to-many relationship
+            modelBuilder.Entity<Product>().HasMany()
+
+
+        }
+
+
     }
 }

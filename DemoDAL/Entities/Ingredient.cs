@@ -10,5 +10,8 @@ namespace DemoDAL.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public int AllergyId { get; set; }
+
+        public Product product { get; set; }
+        public int ProductId { get; set; }
     }
 }

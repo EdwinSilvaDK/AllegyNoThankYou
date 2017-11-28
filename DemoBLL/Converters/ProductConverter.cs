@@ -17,7 +17,7 @@ namespace DemoBLL.Converters
             {
                 Id = prod.Id,
                 Name = prod.Name,
-                Type = prod.Name,
+                Type = prod.Type,
             };
         }
 
@@ -28,7 +28,7 @@ namespace DemoBLL.Converters
             {
                 Id = prod.Id,
                 Name = prod.Name,
-                Type = prod.Name,
+                Type = prod.Type,
             };
         }
     }
