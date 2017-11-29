@@ -13,4 +13,7 @@
     <Folder Include="BusinessObjects\" />
     <Folder Include="Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="BusinessObjects\ProductIngredientBO.cs" />
+  </ItemGroup>
 </Project>

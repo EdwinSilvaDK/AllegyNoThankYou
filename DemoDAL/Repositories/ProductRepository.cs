@@ -1,8 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
+
+
 using System.Linq;
 using DemoDAL.Context;
 using DemoDAL.Entities;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+
+
+
 
 namespace DemoDAL.Repositories
 {
@@ -36,12 +42,18 @@ namespace DemoDAL.Repositories
 
         public IEnumerable<Product> GetAll()
         {
-            return _context.Products.ToList();
+            return _context.Products.
+                           Include(I => I.Ingredients).
+                           ThenInclude(pi => pi.Ingredient)
+                           .ToList();
+
         }
 
         public IEnumerable<Product> GetAllById(List<int> ids)
         {
             return null;
         }
+
+
     }
 }
