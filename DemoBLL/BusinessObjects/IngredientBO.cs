@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 namespace DemoBLL.BusinessObjects
 {
-    public class ProductBO : IBusinessObject
+    public class IngredientBO : IBusinessObject
     {
+        public IngredientBO()
+        {
+        }
+
         public int Id { get; set; }
-        public string Type { get; set; }
         public string Name { get; set; }
+        public int AllergyId { get; set; }
         public List<IngredientBO> Ingredients { get; set; }
     }
 }

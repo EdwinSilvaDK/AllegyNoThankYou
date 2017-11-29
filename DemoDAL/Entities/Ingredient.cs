@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 namespace DemoDAL.Entities
 {
-    public class Product : IEntity
+    public class Ingredient : IEntity
     {
-        public Product()
+        public Ingredient()
         {
         }
+
         public int Id { get; set; }
-        public string Type { get; set; }
         public string Name { get; set; }
+        public int AllergyId { get; set; }
 
-        public List<ProductIngredient> Ingredients { get; set; }
+        public List<ProductIngredient> Products { get; set; }
     }
-
 }

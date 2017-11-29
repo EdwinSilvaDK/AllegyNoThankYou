@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DemoDAL.Context;
 using DemoDAL.Entities;
 
@@ -15,29 +16,32 @@ namespace DemoDAL.Repositories
         }
 
 
-        public Product Create(Product ent)
+        public Product Create(Product prod)
         {
-            throw new NotImplementedException();
+            _context.Products.Add(prod);
+            return prod;
         }
 
         public Product Delete(int Id)
         {
-            throw new NotImplementedException();
+            var prod = Get(Id);
+            _context.Products.Remove(prod);
+            return prod;
         }
 
         public Product Get(int Id)
         {
-            throw new NotImplementedException();
+            return _context.Products.FirstOrDefault(p => p.Id == Id);
         }
 
         public IEnumerable<Product> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Products.ToList();
         }
 
         public IEnumerable<Product> GetAllById(List<int> ids)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

@@ -11,7 +11,9 @@ namespace DemoDAL.UOW
     {
         public IProductRepository ProductRepository { get; internal set; }
 
+        public IIngredientRepository IngredientRepository { get; internal set; }
 
+        public IAllergyRepository AllergyRepository { get; internal set; }
 
         private EASVContext context;
 
@@ -37,6 +39,8 @@ namespace DemoDAL.UOW
 
 
             ProductRepository = new ProductRepository(context);
+            IngredientRepository = new IngredientRepository(context);
+            AllergyRepository = new AllergyRepository(context);
         }
 
         public int Complete()
