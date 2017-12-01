@@ -16,22 +16,20 @@ namespace DemoDAL.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProductIngredient>()
-                        .HasKey(pi => new { pi.ProductId, pi.IngredientId });
-
-
-            modelBuilder.Entity<ProductIngredient>()
-                        .HasOne(pi => pi.Product)
-                        .WithMany(I => I.Ingredients)
-                        .HasForeignKey(pi => pi.ProductId);
+                        .HasKey(pi => new { pi.IngredientId, pi.ProductId });
 
             modelBuilder.Entity<ProductIngredient>()
                         .HasOne(pi => pi.Ingredient)
-                        .WithMany(p => p.Products)
+                        .WithMany(a => a.Products)
                         .HasForeignKey(pi => pi.IngredientId);
 
+            modelBuilder.Entity<ProductIngredient>()
+                        .HasOne(pi => pi.Product)
+                        .WithMany(i => i.Ingredients)
+                        .HasForeignKey(pi => pi.ProductId);
 
 
-
+            base.OnModelCreating(modelBuilder);
         }
 
 
