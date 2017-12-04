@@ -11,7 +11,7 @@ namespace DemoDAL.Context
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
-        public DbSet<Allergy> Allergies { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -20,7 +20,7 @@ namespace DemoDAL.Context
 
             modelBuilder.Entity<ProductIngredient>()
                         .HasOne(pi => pi.Ingredient)
-                        .WithMany(a => a.Products)
+                        .WithMany(p => p.Products)
                         .HasForeignKey(pi => pi.IngredientId);
 
             modelBuilder.Entity<ProductIngredient>()

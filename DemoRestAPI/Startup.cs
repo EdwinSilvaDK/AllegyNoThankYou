@@ -61,22 +61,10 @@ namespace CustomerRestAPI
                 var facade = new BLLFacade(Configuration);
 
 
-                var ind = facade.IngredientService.Create(
-                    new IngredientBO()
-                    {
-                        Id = 1,
-                        Name = "Gluten",
-                        AllergyId = 2,
-                    });
 
-                var pro = facade.ProductService.Create(
-                    new ProductBO()
-                    {
-                        Name = "Milk",
-                        Type = "Dairy",
-                        Ingredients = new List<IngredientBO>() { ind },
 
-                    });
+
+
             }
 
             app.UseMvc();

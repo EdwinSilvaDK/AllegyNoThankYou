@@ -23,5 +23,8 @@
     <Compile Remove="Entities\Order.cs" />
     <Compile Remove="Repositories\CustomerRepository.cs" />
     <Compile Remove="Repositories\CustomerRepositoryFakeDB.cs" />
+    <Compile Remove="Entities\Allergy.cs" />
+    <Compile Remove="Repositories\AllergyRepository.cs" />
+    <Compile Remove="IAllergyRepository.cs" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ namespace DemoDAL.Entities
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public int AllergyId { get; set; }
+
 
         public List<ProductIngredient> Products { get; set; }
     }
