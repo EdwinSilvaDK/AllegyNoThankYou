@@ -71,7 +71,7 @@ namespace DemoBLL.Services
                 }
                 IngredientFromDb.Id = ind.Id;
                 IngredientFromDb.Name = ind.Name;
-                IngredientFromDb.AllergyId = ind.AllergyId;
+
 
                 uow.Complete();
                 return Iconv.Convert(IngredientFromDb);

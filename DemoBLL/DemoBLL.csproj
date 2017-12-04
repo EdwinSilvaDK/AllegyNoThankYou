@@ -12,8 +12,13 @@
     <Folder Include="Facade\" />
     <Folder Include="BusinessObjects\" />
     <Folder Include="Services\" />
+    <Folder Include="SearchHelper\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BusinessObjects\ProductIngredientBO.cs" />
+    <Compile Remove="BusinessObjects\AllergyBO.cs" />
+    <Compile Remove="Converters\Allergyconverter.cs" />
+    <Compile Remove="Services\AllergyService.cs" />
+    <Compile Remove="IAllergyService.cs" />
   </ItemGroup>
 </Project>

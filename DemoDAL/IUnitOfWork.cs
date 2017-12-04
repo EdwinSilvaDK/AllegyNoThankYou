@@ -5,7 +5,7 @@ namespace DemoDAL
     {
         IProductRepository ProductRepository { get; }
         IIngredientRepository IngredientRepository { get; }
-        IAllergyRepository AllergyRepository { get; }
+
 
         int Complete();
     }

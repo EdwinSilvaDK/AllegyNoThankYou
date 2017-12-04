@@ -20,9 +20,10 @@ namespace DemoBLL.Converters
                 Id = prod.Id,
                 Name = prod.Name,
                 Type = prod.Type,
-                Ingredients = prod.Ingredients?.Select(I => new ProductIngredient()
+                Ingredients = prod.IngredientIds?.Select(iId => new ProductIngredient()
                 {
-                    IngredientId = I.Id,
+
+                    IngredientId = iId,
                     ProductId = prod.Id,
                 }).ToList(),
             };
@@ -34,15 +35,16 @@ namespace DemoBLL.Converters
             return new ProductBO()
             {
                 Id = prod.Id,
+                IngredientIds = prod.Ingredients.Select(i => i.IngredientId).ToList(),
                 Name = prod.Name,
                 Type = prod.Type,
-                Ingredients = prod.Ingredients?.Select(I => new IngredientBO()
-                {
-                    Id = I.ProductId,
-                    Name = I.Ingredient?.Name,
+                /* Ingredients = prod.Ingredients?.Select(I => new IngredientBO()
+                 {
+                     Id = I.ProductId,
+                     Name = I.Ingredient?.Name
 
-                }).ToList(),
-
+                 }).ToList(),
+                 */
             };
         }
     }

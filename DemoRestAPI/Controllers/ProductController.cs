@@ -36,7 +36,7 @@ namespace DemoRestAPI.Controllers
         {
             try
             {
-                return Ok(facade.ProductService.Delete(id));
+                return Ok(facade.ProductService.Delete(Id));
             }
             catch (InvalidOperationException e)
             {
