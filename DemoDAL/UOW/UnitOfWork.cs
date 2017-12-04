@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using DemoDAL.Repositories;
 
 
-Edison Prueba;
 namespace DemoDAL.UOW
 {
     public class UnitOfWork : IUnitOfWork
