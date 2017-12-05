@@ -58,7 +58,7 @@ namespace CustomerRestAPI
 
                 app.UseDeveloperExceptionPage();
 
-                var facade = new BLLFacade(Configuration);
+                //var facade = new BLLFacade(Configuration);
 
 
 
