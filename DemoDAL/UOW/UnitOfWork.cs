@@ -2,6 +2,8 @@
 using DemoDAL.Context;
 using Microsoft.EntityFrameworkCore;
 using DemoDAL.Repositories;
+using Microsoft.Extensions.Configuration;
+
 
 
 namespace DemoDAL.UOW
@@ -11,31 +13,35 @@ namespace DemoDAL.UOW
         public IProductRepository ProductRepository { get; internal set; }
 
         public IIngredientRepository IngredientRepository { get; internal set; }
-
-
-
+                
         private EASVContext context;
 
-        private static DbContextOptions<EASVContext> optionsStatic;
 
+        //private static DbContextOptions<EASVContext> optionsStatic;
+        
         public UnitOfWork(DbOptions opt)
         {
+            DbContextOptions<EASVContext> options;
+
             if (opt.Environment == "Development" && String.IsNullOrEmpty(opt.ConnectionString))
             {
-                optionsStatic = new DbContextOptionsBuilder<EASVContext>()
+                //optionsStatic
+                options = new DbContextOptionsBuilder<EASVContext>()
                    .UseInMemoryDatabase("TheDB")
                    .Options;
-                context = new EASVContext(optionsStatic);
+                //context = new EASVContext(optionsStatic);
             }
             else
             {
-                var options = new DbContextOptionsBuilder<EASVContext>()
+                options = new DbContextOptionsBuilder<EASVContext>()
                 .UseSqlServer(opt.ConnectionString)
                     .Options;
                 context = new EASVContext(options);
-            }
+           }
 
 
+
+            context = new EASVContext(options);
 
             ProductRepository = new ProductRepository(context);
             IngredientRepository = new IngredientRepository(context);
