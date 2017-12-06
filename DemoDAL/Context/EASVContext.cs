@@ -5,18 +5,19 @@ using System.Collections.Generic;
 
 namespace DemoDAL.Context
 {
-    public class EASVContext : DbContext
+    class EASVContext : DbContext
     {
-        public EASVContext(DbContextOptions<EASVContext> options) : base(options) { }
+        //AÑADIDO
+        static DbContextOptions<EASVContext> options = new DbContextOptionsBuilder<EASVContext>().UseInMemoryDatabase("TheDB").Options;
+        //public EASVContext(DbContextOptions<EASVContext> options) : base(options) { }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Ingredient> Ingredients { get; set; }
+//cambio de lugar
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server = tcp:allegynothankyoudbserver.database.windows.net, 1433; Initial Catalog = allegynothankyouDB; Persist Security Info = False; User ID = jede; Password = Easv1234; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
+                optionsBuilder.UseSqlServer(@"Server=tcp:allegynothankyoudbserver.database.windows.net,1433;Initial Catalog=allegynothankyouDB;Persist Security Info=False;User ID=jede;Password=Easv1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
 
@@ -40,6 +41,8 @@ namespace DemoDAL.Context
             base.OnModelCreating(modelBuilder);
         }
 
-        
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Ingredient> Ingredients { get; set; }
+
     }
 }

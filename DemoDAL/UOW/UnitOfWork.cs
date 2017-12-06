@@ -18,11 +18,11 @@ namespace DemoDAL.UOW
 
 
         //private static DbContextOptions<EASVContext> optionsStatic;
-        
-        public UnitOfWork(DbOptions opt)
-        {
-            DbContextOptions<EASVContext> options;
+        //(DbOptions opt)
 
+        public UnitOfWork()
+        {
+            /*
             if (opt.Environment == "Development" && String.IsNullOrEmpty(opt.ConnectionString))
             {
                 //optionsStatic
@@ -37,12 +37,14 @@ namespace DemoDAL.UOW
                 .UseSqlServer(opt.ConnectionString)
                     .Options;
                 context = new EASVContext(options);
-           }
+           }*/
 
-
-
-            context = new EASVContext(options);
-
+            //(options)
+            //
+            context = new EASVContext();
+            //
+            context.Database.EnsureCreated();
+            //
             ProductRepository = new ProductRepository(context);
             IngredientRepository = new IngredientRepository(context);
 
