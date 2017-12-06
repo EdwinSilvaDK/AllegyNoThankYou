@@ -1,4 +1,8 @@
-﻿using DemoDAL.UOW;
+﻿using CustomerAppDAL.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using CustomerAppDAL.UOW;
 
 namespace DemoDAL.Facade
 {
