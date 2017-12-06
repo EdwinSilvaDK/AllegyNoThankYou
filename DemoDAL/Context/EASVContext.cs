@@ -13,14 +13,15 @@ namespace DemoDAL.Context
         public DbSet<Ingredient> Ingredients { get; set; }
 
         /// String to connect with the DB
-
+        /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=tcp:allegynothankyoudbserver.database.windows.net,1433;Initial Catalog=AllegyNoThankYouDB;Persist Security Info=False;User ID=jede;Password=Easv1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                optionsBuilder.UseSqlServer(@"Server=tcp:allegynothankyoudbserver.database.windows.net,1433;Initial Catalog=AllegyNoThankYouDB;Persist Security Info=False;User ID=hhde;Password=Easv1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             }
         }
+        */
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
