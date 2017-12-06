@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DemoDAL.Repositories
 {
-     class ProductRepository : IProductRepository
+    public class ProductRepository : IProductRepository
     {
         EASVContext _context;
 

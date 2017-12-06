@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using DemoDAL.Entities;
 using DemoDAL.Context;
 using System.Linq;
-using System.Text;
 
 namespace DemoDAL.Repositories
 {
-     class IngredientRepository : IIngredientRepository
+    public class IngredientRepository : IIngredientRepository
     {
         EASVContext _context;
         public IngredientRepository(EASVContext context)
