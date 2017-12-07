@@ -8,19 +8,19 @@ namespace DemoDAL.UOW
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public IProductRepository ProductRepository { get; internal set; }
+        /*public IProductRepository ProductRepository { get; internal set; }
 
         public IIngredientRepository IngredientRepository { get; internal set; }
-
+        */
 
 
         private EASVContext context;
 
-        private static DbContextOptions<EASVContext> optionsStatic;
+        /*private static DbContextOptions<EASVContext> optionsStatic;
 
         public UnitOfWork(DbOptions opt)
         {
-            /*if (opt.Environment == "Development" && String.IsNullOrEmpty(opt.ConnectionString))
+            if (opt.Environment == "Development" && String.IsNullOrEmpty(opt.ConnectionString))
             {
                 optionsStatic = new DbContextOptionsBuilder<EASVContext>()
                    .UseInMemoryDatabase("TheDB")
@@ -28,12 +28,12 @@ namespace DemoDAL.UOW
                 context = new EASVContext(optionsStatic);
             }
             else
-            {*/
+            {
                 var options = new DbContextOptionsBuilder<EASVContext>()
                 .UseSqlServer(opt.ConnectionString)
                     .Options;
                 context = new EASVContext(options);
-            //}
+            }
             
             ///Ensure sql queries are created
             context.Database.EnsureCreated();
@@ -41,7 +41,31 @@ namespace DemoDAL.UOW
             ProductRepository = new ProductRepository(context);
             IngredientRepository = new IngredientRepository(context);
 
+        }*/
+
+        public UnitOfWork(DbOptions opt)
+        {
+            DbContextOptions<EASVContext> options;
+            if (opt.Environment == "Development" && String.IsNullOrEmpty(opt.ConnectionString))
+            {
+                options = new DbContextOptionsBuilder<EASVContext>()
+                   .UseInMemoryDatabase("TheDB")
+                   .Options;
+            }
+            else
+            {
+                options = new DbContextOptionsBuilder<EASVContext>()
+                .UseSqlServer(opt.ConnectionString)
+                    .Options;
+            }
+
+            context = new EASVContext(options);
         }
+
+        //Fat Arrow!
+        public IProductRepository ProductRepository { get => new ProductRepository(context); }
+        public IIngredientRepository IngredientRepository { get => new IngredientRepository(context); }
+
 
         public int Complete()
         {
