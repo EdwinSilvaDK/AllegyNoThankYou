@@ -12,6 +12,7 @@ namespace DemoBLL.Services
     {
         IDALFacade facade;
         private ProductConverter Pconv = new ProductConverter();
+        private IngredientConverter Iconv = new IngredientConverter();
 
         public ProductService(IDALFacade facade)
         {
@@ -45,7 +46,13 @@ namespace DemoBLL.Services
         {
             using (var uow = facade.UnitOfWork)
             {
-                return Pconv.Convert(uow.ProductRepository.Get(Id));
+                var prod = Pconv.Convert(uow.ProductRepository.Get(Id));
+
+                prod.Ingredients = prod.IngredientIds?
+                    .Select(id => Iconv.Convert(uow.IngredientRepository.Get(id)))
+                    .ToList();
+
+                return prod;
             }
         }
 
@@ -75,5 +82,6 @@ namespace DemoBLL.Services
                 return Pconv.Convert(ProductFromDb);
             }
         }
+
     }
 }

@@ -12,7 +12,6 @@
     <Folder Include="Facade\" />
     <Folder Include="BusinessObjects\" />
     <Folder Include="Services\" />
-    <Folder Include="SearchHelper\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="BusinessObjects\ProductIngredientBO.cs" />
