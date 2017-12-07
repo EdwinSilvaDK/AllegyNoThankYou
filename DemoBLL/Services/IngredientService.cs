@@ -18,6 +18,8 @@ namespace DemoBLL.Services
             this.facade = facade;
         }
 
+
+
         public IngredientBO Create(IngredientBO ind)
         {
             using (var uow = facade.UnitOfWork)
@@ -46,10 +48,20 @@ namespace DemoBLL.Services
         {
             using (var uow = facade.UnitOfWork)
             {
-                return Iconv.Convert(uow.IngredientRepository.Get(Id));
-
+                var Ingredient = Iconv.Convert(uow.IngredientRepository.Get(Id));
+                return Ingredient;
             }
         }
+        public List<IngredientBO> GetAllFiltered(List<int> ids)
+        {
+
+            var Ingredient = GetAll();
+            var filteredIngredient = Ingredient.Where(i => !ids.Contains(i.Id)).ToList();
+            return filteredIngredient;
+
+        }
+
+
 
         public List<IngredientBO> GetAll()
         {
