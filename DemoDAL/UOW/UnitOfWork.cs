@@ -47,17 +47,17 @@ namespace DemoDAL.UOW
         {
             DbContextOptions<EASVContext> options;
             /*if (opt.Environment == "Development" && String.IsNullOrEmpty(opt.ConnectionString))
-            {
+            {*/
                 options = new DbContextOptionsBuilder<EASVContext>()
                    .UseInMemoryDatabase("TheDB")
                    .Options;
-            }
+           /* }
             else
-            {*/
+            {
                 options = new DbContextOptionsBuilder<EASVContext>()
                 .UseSqlServer(opt.ConnectionString)
                     .Options;
-           // }
+            }*/
 
             context = new EASVContext(options);
         }
