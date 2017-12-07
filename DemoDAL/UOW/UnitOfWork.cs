@@ -36,7 +36,7 @@ namespace DemoDAL.UOW
             }
             
             ///Ensure sql queries are created
-            context.Database.EnsureCreated();
+            ///context.Database.EnsureCreated();
             
             ProductRepository = new ProductRepository(context);
             IngredientRepository = new IngredientRepository(context);
