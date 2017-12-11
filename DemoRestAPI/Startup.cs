@@ -60,7 +60,7 @@ namespace CustomerRestAPI
 
                 var facade = new BLLFacade(Configuration);
 
-                string[] Ingredients = {
+                /*string[] Ingredients = {
 
 "Protein",
 "Fedt",
@@ -144,7 +144,7 @@ namespace CustomerRestAPI
                      {
                          Name = "" + ind
                      });
-                }
+                }*/
 
 
 
