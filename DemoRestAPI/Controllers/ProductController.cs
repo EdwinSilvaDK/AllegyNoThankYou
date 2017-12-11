@@ -52,13 +52,14 @@ namespace DemoRestAPI.Controllers
             return facade.ProductService.Update(pro);
         }
 
+
+        [HttpPost]
+        [Route("")]
+
         public ProductBO Post([FromBody] ProductBO pro)
         {
             return facade.ProductService.Create(pro);
         }
-
-        /*
-
 
 
         [HttpPost]
@@ -68,7 +69,8 @@ namespace DemoRestAPI.Controllers
             return facade.ProductService.GetAllFilteredIngredient(ids);
 
         }
-        */
+
+
 
 
 

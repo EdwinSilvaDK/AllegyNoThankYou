@@ -21,6 +21,7 @@ namespace CustomerRestAPI
                 .UseStartup<Startup>()
                 .Build();
 
+<<<<<<< HEAD
         /*
                 string[] Ingredients =
                             {
@@ -99,6 +100,9 @@ namespace CustomerRestAPI
                             "Serin",
                     };
         */
+=======
+
+>>>>>>> 2db9362cd80934acec8e020fe6f5754e5cfe4711
 
 
 
