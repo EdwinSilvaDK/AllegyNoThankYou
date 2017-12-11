@@ -21,7 +21,7 @@ namespace CustomerRestAPI
                 .UseStartup<Startup>()
                 .Build();
 
-        string[] Ingredients = {
+        /*string[] Ingredients = {
 
 "Protein",
 "Fedt",
@@ -97,7 +97,7 @@ namespace CustomerRestAPI
 "Prolin",
 "Serin",
 
-            };
+            };*/
 
     }
 
