@@ -1,5 +1,4 @@
 ﻿using System;
-<<<<<<< HEAD
 using System.Collections.Generic;
 using DemoBLL;
 using DemoBLL.BusinessObjects;
