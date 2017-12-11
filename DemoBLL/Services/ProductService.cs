@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DemoBLL.BusinessObjects;
 using DemoDAL;
+using DemoBLL;
 using DemoDAL.Entities;
 using DemoBLL.Converters;
 using System.Linq;
@@ -61,6 +62,28 @@ namespace DemoBLL.Services
             using (var uow = facade.UnitOfWork)
             {
                 return uow.ProductRepository.GetAll().Select(p => Pconv.Convert(p)).ToList();
+            }
+        }
+
+
+        public List<IngredientBO> GetAllFilteredIngredient(List<int> ids)
+        {
+
+
+            var Ingredient = GetAllIndgredients();
+            var filteredIngredient = Ingredient.Where(i => !ids.Contains(i.Id)).ToList();
+            return filteredIngredient;
+
+        }
+
+
+
+        public List<IngredientBO> GetAllIndgredients()
+        {
+            using (var uow = facade.UnitOfWork)
+            {
+                return uow.IngredientRepository.GetAll().Select(i => Iconv.Convert(i)).ToList();
+
             }
         }
 

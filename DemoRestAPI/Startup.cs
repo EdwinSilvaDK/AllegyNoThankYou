@@ -58,103 +58,108 @@ namespace CustomerRestAPI
 
                 app.UseDeveloperExceptionPage();
 
+
+
+                app.UseMvc();
+
+                /*
                 var facade = new BLLFacade(Configuration);
 
-                string[] Ingredients = {
-
-"Protein",
-"Fedt",
-"mættede fedtsyrer",
-"monoumætt fedtsyrer",
-"polyumætt fedtsyrer",
-"Kulhydrat",
-"sukker",
-"kostfibre",
-"Alkohol",
-"Aske",
-"Vand",
-"A-vitamin",
-"Retinol",
-"β-caroten",
-"D-vitamin",
-"cholecalciferol",
-"ergocalciferol",
-"hydroxycholecalciferol",
- "E-vitamin",
-"alfa-tokoferol",
-"K-vitamin",
-"B1-vitamin",
-"B2-vitamin",
-"Niacin",
-"niacin",
-"tryptofans",
-"B6-vitamin",
-"Pantothensyre",
-"Biotin",
-"Folat",
-"B12-vitamin",
-"C-vitamin",
-"Natrium",
-"Kalium",
-"Calcium",
-"Magnesium",
-"Phosphor",
-"Jern",
-"Kobber",
-"Zink",
-"Jod",
-"Mangan",
-"Chrom",
-"Selen",
-"Nikkel",
-"Fructose",
-"Glucose",
-"Lactose",
-"Maltose",
-"Saccharose",
-"Sukkerarter",
-"Stivelse",
-"Kostfibre",
-"Transfedtsyrer",
-"Cholesterol",
-"Isoleucin",
-"Leucin",
-"Lysin",
-"Methionin",
-"Cystin",
-"Phenylalanin",
-"Tyrosin",
-"Threonin",
-"Tryptofan",
-"Valin",
-"Arginin",
-"Histidin",
-"Alanin",
-"Asparaginsyre",
-"Glutaminsyre",
-"Glycin",
-"Prolin",
-"Serin",
-
-            };
+                string[] Ingredients =
+                              {
+                     "Protein",
+                     "Fedt",
+                     "mættede fedtsyrer",
+                     "monoumætt fedtsyrer",
+                     "polyumætt fedtsyrer",
+                     "Kulhydrat",
+                     "sukker",
+                     "kostfibre",
+                     "Alkohol",
+                     "Aske",
+                     "Vand",
+                     "A-vitamin",
+                     "Retinol",
+                     "β-caroten",
+                     "D-vitamin",
+                     "cholecalciferol",
+                     "ergocalciferol",
+                     "hydroxycholecalciferol",
+                      "E-vitamin",
+                     "alfa-tokoferol",
+                     "K-vitamin",
+                     "B1-vitamin",
+                     "B2-vitamin",
+                     "Niacin",
+                     "niacin",
+                     "tryptofans",
+                     "B6-vitamin",
+                     "Pantothensyre",
+                     "Biotin",
+                     "Folat",
+                     "B12-vitamin",
+                     "C-vitamin",
+                     "Natrium",
+                     "Kalium",
+                     "Calcium",
+                     "Magnesium",
+                     "Phosphor",
+                     "Jern",
+                     "Kobber",
+                     "Zink",
+                     "Jod",
+                     "Mangan",
+                     "Chrom",
+                     "Selen",
+                     "Nikkel",
+                     "Fructose",
+                     "Glucose",
+                     "Lactose",
+                     "Maltose",
+                     "Saccharose",
+                     "Sukkerarter",
+                     "Stivelse",
+                     "Kostfibre",
+                     "Transfedtsyrer",
+                     "Cholesterol",
+                     "Isoleucin",
+                     "Leucin",
+                     "Lysin",
+                     "Methionin",
+                     "Cystin",
+                     "Phenylalanin",
+                     "Tyrosin",
+                     "Threonin",
+                     "Tryptofan",
+                     "Valin",
+                     "Arginin",
+                     "Histidin",
+                     "Alanin",
+                     "Asparaginsyre",
+                     "Glutaminsyre",
+                     "Glycin",
+                     "Prolin",
+                     "Serin",
+             };
                 foreach (string ind in Ingredients)
                 {
-                    var Igredient = facade.IngredientService.Create(
+                    var Ingredient = facade.IngredientService.Create(
                      new IngredientBO()
                      {
                          Name = "" + ind
                      });
                 }
-
-
-
-
-
-
+*/
             }
 
-            app.UseMvc();
+
+
+
         }
+
+
     }
 }
+
+
 
