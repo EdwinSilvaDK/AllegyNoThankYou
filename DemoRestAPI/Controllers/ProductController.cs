@@ -1,5 +1,5 @@
 ﻿using System;
-<<<<<<< HEAD
+
 using System.Collections.Generic;
 using DemoBLL;
 using DemoBLL.BusinessObjects;
@@ -52,10 +52,20 @@ namespace DemoRestAPI.Controllers
         }
 
         [HttpPost]
+        [Route("")]
         public ProductBO Post([FromBody] ProductBO pro)
         {
             return facade.ProductService.Create(pro);
         }
+
+        [HttpPost]
+        [Route("FilteretProducts")]
+        public List<IngredientBO> GetFilteredList([FromBody] List<int> ids)
+        {
+            return facade.ProductService.GetAllFilteredIngredient(ids);
+
+        }
+
 
 
     }
