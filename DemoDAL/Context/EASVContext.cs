@@ -10,9 +10,8 @@ namespace DemoDAL.Context
         public EASVContext(DbContextOptions<EASVContext> options) : base(options) { }
 
 
-
-        /*
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//The string is kept in the json file appsettings so this part is not necessary
+/*      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
@@ -20,8 +19,6 @@ namespace DemoDAL.Context
             }
         }
 */
-
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
