@@ -37,9 +37,10 @@ namespace DemoDAL.Repositories
 
         public Product Get(int Id)
         {
-            var prod = _context.Products.FirstOrDefault(p => p.Id == Id);
+            return _context.Products
+                           .Include(p => p.Ingredients)
+                           .FirstOrDefault(p => p.Id == Id);
 
-            return prod;
         }
 
         public IEnumerable<Product> GetAll()
@@ -50,6 +51,8 @@ namespace DemoDAL.Repositories
                            .ToList();
 
         }
+
+
 
 
         public IEnumerable<Product> GetAllById(List<int> ids)

@@ -15,5 +15,5 @@ namespace DemoBLL
         //D
         IBusinessObject Delete(int Id);
     }
-    
+
 }

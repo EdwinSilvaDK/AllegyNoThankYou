@@ -32,7 +32,10 @@ namespace CustomerRestAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+<<<<<<< HEAD
             
+=======
+>>>>>>> b1d42960ae377047d05b7fc8249ed12ff03f7b16
             services.AddMvc();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
@@ -59,14 +62,117 @@ namespace CustomerRestAPI
 
                 app.UseDeveloperExceptionPage();
 
+<<<<<<< HEAD
                
             
 
 
+=======
+
+
+
+                app.UseMvc();
+
+
+                var facade = new BLLFacade(Configuration);
+
+                string[] Ingredients =
+                    {
+                    "Protein",
+                    "Fedt",
+                   "mættede fedtsyrer",
+                    "monoumætt fedtsyrer",
+                    "polyumætt fedtsyrer",
+                    "Kulhydrat",
+                    "sukker",
+                    "kostfibre",
+                    "Alkohol",
+                    "Aske",
+                    "Vand",
+                    "A-vitamin",
+                    "Retinol",
+                    "β-caroten",
+                    "D-vitamin",
+                    "cholecalciferol",
+                    "ergocalciferol",
+                    "hydroxycholecalciferol",
+                     "E-vitamin",
+                    "alfa-tokoferol",
+                    "K-vitamin",
+                    "B1-vitamin",
+                    "B2-vitamin",
+                    "Niacin",
+                    "niacin",
+                    "tryptofans",
+                    "B6-vitamin",
+                    "Pantothensyre",
+                    "Biotin",
+                    "Folat",
+                    "B12-vitamin",
+                    "C-vitamin",
+                    "Natrium",
+                    "Kalium",
+                    "Calcium",
+                    "Magnesium",
+                    "Phosphor",
+                    "Jern",
+                    "Kobber",
+                    "Zink",
+                    "Jod",
+                    "Mangan",
+                    "Chrom",
+                    "Selen",
+                    "Nikkel",
+                    "Fructose",
+                    "Glucose",
+                    "Lactose",
+                    "Maltose",
+                    "Saccharose",
+                    "Sukkerarter",
+                    "Stivelse",
+                    "Kostfibre",
+                    "Transfedtsyrer",
+                    "Cholesterol",
+                    "Isoleucin",
+                    "Leucin",
+                    "Lysin",
+                    "Methionin",
+                    "Cystin",
+                    "Phenylalanin",
+                    "Tyrosin",
+                    "Threonin",
+                    "Tryptofan",
+                    "Valin",
+                    "Arginin",
+                    "Histidin",
+                    "Alanin",
+                    "Asparaginsyre",
+                    "Glutaminsyre",
+                    "Glycin",
+                    "Prolin",
+                    "Serin",
+            };
+                foreach (string ind in Ingredients)
+                {
+                    var Ingredient = facade.IngredientService.Create(
+                     new IngredientBO()
+
+                     {
+                         Name = "" + ind
+                     });
+                }
+
+>>>>>>> b1d42960ae377047d05b7fc8249ed12ff03f7b16
             }
 
-            app.UseMvc();
+
+
+
         }
+
+
     }
 }
+
+
 
