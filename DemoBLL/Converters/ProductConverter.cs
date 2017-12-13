@@ -40,7 +40,7 @@ namespace DemoBLL.Converters
                 Type = prod.Type,
                 Ingredients = prod.Ingredients?.Select(I => new IngredientBO()
                 {
-                    Id = I.ProductId,
+                    Id = I.IngredientId,
                     Name = I.Ingredient?.Name
 
                 }).ToList(),

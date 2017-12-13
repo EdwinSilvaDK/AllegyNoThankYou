@@ -70,7 +70,7 @@ namespace CustomerRestAPI
                     {
                     "Protein",
                     "Fedt",
-                    "mættede fedtsyrer",
+                   "mættede fedtsyrer",
                     "monoumætt fedtsyrer",
                     "polyumætt fedtsyrer",
                     "Kulhydrat",

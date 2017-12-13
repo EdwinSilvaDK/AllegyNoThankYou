@@ -6,6 +6,7 @@ using DemoBLL;
 using DemoBLL.BusinessObjects;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 
 namespace DemoRestAPI.Controllers
 {
@@ -63,13 +64,21 @@ namespace DemoRestAPI.Controllers
 
 
         [HttpPost]
-        [Route("FilteretProducts")]
-        public List<IngredientBO> GetFilteredList([FromBody] List<int> ids)
+        [Route("FilteredProducts")]
+        public List<ProductBO> FilteredList([FromBody]List<int> ids)
         {
-            return facade.ProductService.GetAllFilteredIngredient(ids);
+
+            var filterProduct = facade.ProductService.FilteretProduct(ids);
+            return (System.Collections.Generic.List<DemoBLL.BusinessObjects.ProductBO>)Getfilterproduct(filterProduct);
 
         }
+        [HttpGet]
+        [Route("getFilteretProducts")]
+        public IEnumerable<ProductBO> Getfilterproduct(List<ProductBO> filtprod)
+        {
+            return facade.ProductService.Getfilteredlist();
 
+        }
 
 
 

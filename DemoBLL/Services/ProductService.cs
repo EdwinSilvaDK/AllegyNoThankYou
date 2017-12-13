@@ -6,12 +6,15 @@ using DemoBLL;
 using DemoDAL.Entities;
 using DemoBLL.Converters;
 using System.Linq;
+using DemoDAL.Repositories;
 
 namespace DemoBLL.Services
 {
     public class ProductService : IProductService
     {
+
         IDALFacade facade;
+        List<ProductBO> FilteredProducts = new List<ProductBO>();
         private ProductConverter Pconv = new ProductConverter();
         private IngredientConverter Iconv = new IngredientConverter();
 
@@ -65,27 +68,39 @@ namespace DemoBLL.Services
             }
         }
 
-
-        public List<IngredientBO> GetAllFilteredIngredient(List<int> ids)
+        public List<ProductBO> FilteretProduct(List<int> ids)
         {
 
+            //var Ingredient = GetAllIndgredients();
+            //var filteredIngredient = Ingredient.Where(i => !ids.Contains(i.Id)).ToList();
+            var AllProducts = GetAll();
 
-            var Ingredient = GetAllIndgredients();
-            var filteredIngredient = Ingredient.Where(i => !ids.Contains(i.Id)).ToList();
-            return filteredIngredient;
-
-        }
-
-
-
-        public List<IngredientBO> GetAllIndgredients()
-        {
-            using (var uow = facade.UnitOfWork)
+            foreach (var prod in AllProducts)
             {
-                return uow.IngredientRepository.GetAll().Select(i => Iconv.Convert(i)).ToList();
+                foreach (var id in ids)
+                {
+
+
+                    if (!prod.IngredientIds.Contains(id))
+                    {
+                        FilteredProducts.Add(prod);
+                    }
+
+                }
 
             }
+            return FilteredProducts;
+
         }
+        public List<ProductBO> Getfilteredlist()
+        {
+
+            return FilteredProducts;
+        }
+
+
+
+
 
         public ProductBO Update(ProductBO prod)
         {

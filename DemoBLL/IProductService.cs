@@ -7,9 +7,10 @@ namespace DemoBLL
 {
     public interface IProductService : IService<ProductBO>
     {
-        List<IngredientBO> GetAllIndgredients();
 
-        List<IngredientBO> GetAllFilteredIngredient(List<int> ids);
 
+
+        List<ProductBO> FilteretProduct(List<int> ids);
+        List<ProductBO> Getfilteredlist();
     }
 }
