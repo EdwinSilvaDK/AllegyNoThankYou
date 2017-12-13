@@ -41,7 +41,7 @@ namespace DemoBLL.Services
 
         }
 
-        public ProductBO Get(int Id)
+        public ProductBO Get(int Id) 
         {
             using (var uow = facade.UnitOfWork)
             {
