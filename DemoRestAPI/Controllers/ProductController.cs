@@ -69,16 +69,10 @@ namespace DemoRestAPI.Controllers
         {
 
             var filterProduct = facade.ProductService.FilteretProduct(ids);
-            return (System.Collections.Generic.List<DemoBLL.BusinessObjects.ProductBO>)Getfilterproduct(filterProduct);
+            return filterProduct;
 
         }
-        [HttpGet]
-        [Route("getFilteretProducts")]
-        public IEnumerable<ProductBO> Getfilterproduct(List<ProductBO> filtprod)
-        {
-            return facade.ProductService.Getfilteredlist();
-
-        }
+       
 
 
 

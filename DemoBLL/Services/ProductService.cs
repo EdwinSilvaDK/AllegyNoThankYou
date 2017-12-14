@@ -71,8 +71,6 @@ namespace DemoBLL.Services
         public List<ProductBO> FilteretProduct(List<int> ids)
         {
 
-            //var Ingredient = GetAllIndgredients();
-            //var filteredIngredient = Ingredient.Where(i => !ids.Contains(i.Id)).ToList();
             var AllProducts = GetAll();
 
             foreach (var prod in AllProducts)
@@ -92,6 +90,7 @@ namespace DemoBLL.Services
             return FilteredProducts;
 
         }
+
         public List<ProductBO> Getfilteredlist()
         {
 

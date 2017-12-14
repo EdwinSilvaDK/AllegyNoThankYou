@@ -32,10 +32,6 @@ namespace CustomerRestAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-<<<<<<< HEAD
-            
-=======
->>>>>>> b1d42960ae377047d05b7fc8249ed12ff03f7b16
             services.AddMvc();
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
@@ -61,14 +57,6 @@ namespace CustomerRestAPI
                 loggerFactory.AddDebug();
 
                 app.UseDeveloperExceptionPage();
-
-<<<<<<< HEAD
-               
-            
-
-
-=======
-
 
 
                 app.UseMvc();
@@ -162,7 +150,6 @@ namespace CustomerRestAPI
                      });
                 }
 
->>>>>>> b1d42960ae377047d05b7fc8249ed12ff03f7b16
             }
 
 
