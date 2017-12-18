@@ -4,6 +4,10 @@ using DemoBLL.Converters;
 using DemoDAL.Entities;
 using Xunit;
 
+/// <summary>
+/// 
+/// </summary>
+
 namespace DemoBLLTest
 {
     public class ProductConverterTest
