@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace DemoBLL.BusinessObjects
+namespace AllegyNoThankYouBLL.BusinessObjects
 {
     public class ProductBO : IBusinessObject
     {

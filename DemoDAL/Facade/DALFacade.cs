@@ -1,6 +1,6 @@
-﻿using DemoDAL.UOW;
+﻿using AllegyNoThankYouDAL.UOW;
 
-namespace DemoDAL.Facade
+namespace AllegyNoThankYouDAL.Facade
 {
     public class DALFacade : IDALFacade
     {

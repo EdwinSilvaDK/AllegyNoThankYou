@@ -1,6 +1,6 @@
-﻿using DemoBLL;
-using DemoBLL.BusinessObjects;
-using DemoBLL.Facade;
+﻿using AllegyNoThankYouBLL;
+using AllegyNoThankYouBLL.BusinessObjects;
+using AllegyNoThankYouBLL.Facade;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

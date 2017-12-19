@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using DemoDAL.Entities;
-using DemoDAL.Context;
+using AllegyNoThankYouDAL.Entities;
+using AllegyNoThankYouDAL.Context;
 using System.Linq;
 
-namespace DemoDAL.Repositories
+namespace AllegyNoThankYouDAL.Repositories
 {
     public class IngredientRepository : IIngredientRepository
     {

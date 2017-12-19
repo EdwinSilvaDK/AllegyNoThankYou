@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-namespace DemoDAL.Entities
+namespace AllegyNoThankYouDAL.Entities
 {
     public class Product : IEntity
     {

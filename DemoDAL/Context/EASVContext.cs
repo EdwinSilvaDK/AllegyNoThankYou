@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using DemoDAL.Entities;
+using AllegyNoThankYouDAL.Entities;
 using System.Collections.Generic;
 
 
-namespace DemoDAL.Context
+namespace AllegyNoThankYouDAL.Context
 {
     public class EASVContext : DbContext
     {

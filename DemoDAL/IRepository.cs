@@ -1,9 +1,9 @@
-﻿using DemoDAL.Entities;
+﻿using AllegyNoThankYouDAL.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DemoDAL
+namespace AllegyNoThankYouDAL
 {
     public interface IRepository<IEntity>
     {

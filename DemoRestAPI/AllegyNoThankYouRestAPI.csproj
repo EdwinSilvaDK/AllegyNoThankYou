@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DemoBLL\DemoBLL.csproj" />
+    <ProjectReference Include="..\DemoBLL\AllegyNoThankYouBLL.csproj" />
   </ItemGroup>
 
 </Project>

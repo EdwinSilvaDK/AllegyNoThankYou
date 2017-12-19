@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DemoDAL\DemoDAL.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Facade\" />
     <Folder Include="BusinessObjects\" />
     <Folder Include="Services\" />
@@ -19,5 +15,8 @@
     <Compile Remove="Converters\Allergyconverter.cs" />
     <Compile Remove="Services\AllergyService.cs" />
     <Compile Remove="IAllergyService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoDAL\AllegyNoThankYouDAL.csproj" />
   </ItemGroup>
 </Project>

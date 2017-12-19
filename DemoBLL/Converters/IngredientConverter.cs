@@ -1,8 +1,8 @@
 ﻿using System;
-using DemoBLL.BusinessObjects;
-using DemoDAL.Entities;
+using AllegyNoThankYouBLL.BusinessObjects;
+using AllegyNoThankYouDAL.Entities;
 
-namespace DemoBLL.Converters
+namespace AllegyNoThankYouBLL.Converters
 {
     public class IngredientConverter : IConverter<Ingredient, IngredientBO>
     {

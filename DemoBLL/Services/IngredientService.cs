@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using DemoBLL.BusinessObjects;
-using DemoDAL;
-using DemoBLL.Converters;
+using AllegyNoThankYouBLL.BusinessObjects;
+using AllegyNoThankYouDAL;
+using AllegyNoThankYouBLL.Converters;
 using System.Linq;
 
-namespace DemoBLL.Services
+namespace AllegyNoThankYouBLL.Services
 {
     public class IngredientService : IIngredientService
     {

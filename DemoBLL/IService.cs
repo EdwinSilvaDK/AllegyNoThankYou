@@ -1,7 +1,7 @@
-﻿using DemoBLL.BusinessObjects;
+﻿using AllegyNoThankYouBLL.BusinessObjects;
 using System.Collections.Generic;
 
-namespace DemoBLL
+namespace AllegyNoThankYouBLL
 {
     public interface IService<IBusinessObject>
     {

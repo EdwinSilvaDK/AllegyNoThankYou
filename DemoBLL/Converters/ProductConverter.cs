@@ -1,8 +1,8 @@
 ﻿using System;
-using DemoDAL.Entities;
-using DemoBLL.BusinessObjects;
+using AllegyNoThankYouDAL.Entities;
+using AllegyNoThankYouBLL.BusinessObjects;
 using System.Linq;
-namespace DemoBLL.Converters
+namespace AllegyNoThankYouBLL.Converters
 {
     public class ProductConverter : IConverter<Product, ProductBO>
     {

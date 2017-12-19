@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DemoBLL.Converters
+namespace AllegyNoThankYouBLL.Converters
 {
     interface IConverter <IEntity, IBusinessObject>
     {

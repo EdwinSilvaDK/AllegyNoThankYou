@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DemoBLL.BusinessObjects
+namespace AllegyNoThankYouBLL.BusinessObjects
 {
     public interface IBusinessObject
     {

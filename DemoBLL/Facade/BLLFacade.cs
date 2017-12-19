@@ -1,11 +1,11 @@
 ﻿using System;
 using Microsoft.Extensions.Configuration;
-using DemoDAL;
-using DemoDAL.Facade;
-using DemoBLL.Services;
-using DemoDAL.Repositories;
+using AllegyNoThankYouDAL;
+using AllegyNoThankYouDAL.Facade;
+using AllegyNoThankYouBLL.Services;
+using AllegyNoThankYouDAL.Repositories;
 
-namespace DemoBLL.Facade
+namespace AllegyNoThankYouBLL.Facade
 {
     public class BLLFacade : IBLLFacade
     {

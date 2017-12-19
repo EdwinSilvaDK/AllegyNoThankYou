@@ -1,14 +1,14 @@
 using System;
-using DemoBLL.BusinessObjects;
-using DemoBLL.Converters;
-using DemoDAL.Entities;
+using AllegyNoThankYouBLL.BusinessObjects;
+using AllegyNoThankYouBLL.Converters;
+using AllegyNoThankYouDAL.Entities;
 using Xunit;
 
 /// <summary>
 /// 
 /// </summary>
 
-namespace DemoBLLTest
+namespace AllegyNoThankYouBLLTest
 {
     public class ProductConverterTest
     {

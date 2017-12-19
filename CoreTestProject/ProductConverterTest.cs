@@ -1,6 +1,6 @@
-using DemoBLL.BusinessObjects;
-using DemoBLL.Converters;
-using DemoDAL.Entities;
+using AllegyNoThankYouBLL.BusinessObjects;
+using AllegyNoThankYouBLL.Converters;
+using AllegyNoThankYouDAL.Entities;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CoreTestProject

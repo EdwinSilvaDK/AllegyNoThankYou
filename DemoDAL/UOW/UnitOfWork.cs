@@ -1,10 +1,10 @@
 ﻿using System;
-using DemoDAL.Context;
+using AllegyNoThankYouDAL.Context;
 using Microsoft.EntityFrameworkCore;
-using DemoDAL.Repositories;
+using AllegyNoThankYouDAL.Repositories;
 
 
-namespace DemoDAL.UOW
+namespace AllegyNoThankYouDAL.UOW
 {
     public class UnitOfWork : IUnitOfWork
     {

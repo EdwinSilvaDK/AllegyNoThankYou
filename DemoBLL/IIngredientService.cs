@@ -1,6 +1,6 @@
 ﻿using System;
-using DemoBLL.BusinessObjects;
-namespace DemoBLL.Services
+using AllegyNoThankYouBLL.BusinessObjects;
+namespace AllegyNoThankYouBLL.Services
 {
     public interface IIngredientService : IService<IngredientBO>
     {

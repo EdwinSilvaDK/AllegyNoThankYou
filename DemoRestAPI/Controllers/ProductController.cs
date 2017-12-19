@@ -2,13 +2,13 @@
 
 
 using System.Collections.Generic;
-using DemoBLL;
-using DemoBLL.BusinessObjects;
+using AllegyNoThankYouBLL;
+using AllegyNoThankYouBLL.BusinessObjects;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 
-namespace DemoRestAPI.Controllers
+namespace AllegyNoThankYouRestAPI.Controllers
 {
     [EnableCors("MyPolicy")]
     [Produces("application/json")]

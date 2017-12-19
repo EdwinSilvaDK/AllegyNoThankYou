@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using DemoBLL.BusinessObjects;
-using DemoDAL;
-using DemoBLL;
-using DemoDAL.Entities;
-using DemoBLL.Converters;
+using AllegyNoThankYouBLL.BusinessObjects;
+using AllegyNoThankYouDAL;
+using AllegyNoThankYouBLL;
+using AllegyNoThankYouDAL.Entities;
+using AllegyNoThankYouBLL.Converters;
 using System.Linq;
-using DemoDAL.Repositories;
+using AllegyNoThankYouDAL.Repositories;
 
-namespace DemoBLL.Services
+namespace AllegyNoThankYouBLL.Services
 {
     public class ProductService : IProductService
     {

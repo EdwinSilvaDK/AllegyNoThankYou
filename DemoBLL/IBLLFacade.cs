@@ -1,7 +1,7 @@
 ﻿using System;
-using DemoDAL;
-using DemoBLL.Services;
-namespace DemoBLL
+using AllegyNoThankYouDAL;
+using AllegyNoThankYouBLL.Services;
+namespace AllegyNoThankYouBLL
 {
     public interface IBLLFacade
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using DemoBLL.BusinessObjects;
-using DemoDAL.Entities;
+using AllegyNoThankYouBLL.BusinessObjects;
+using AllegyNoThankYouDAL.Entities;
 
-namespace DemoBLL
+namespace AllegyNoThankYouBLL
 {
     public interface IProductService : IService<ProductBO>
     {

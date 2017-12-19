@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DemoDAL.Entities
+namespace AllegyNoThankYouDAL.Entities
 {
     public class ProductIngredient
     {

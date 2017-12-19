@@ -2,15 +2,15 @@
 
 
 using System.Linq;
-using DemoDAL.Context;
-using DemoDAL.Entities;
+using AllegyNoThankYouDAL.Context;
+using AllegyNoThankYouDAL.Entities;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 
 
 
-namespace DemoDAL.Repositories
+namespace AllegyNoThankYouDAL.Repositories
 {
     public class ProductRepository : IProductRepository
     {
