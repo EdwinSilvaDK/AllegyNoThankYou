@@ -17,6 +17,6 @@
     <Compile Remove="IAllergyService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DemoDAL\AllegyNoThankYouDAL.csproj" />
+    <ProjectReference Include="..\AllegyNoThankYouDAL\AllegyNoThankYouDAL.csproj" />
   </ItemGroup>
 </Project>
