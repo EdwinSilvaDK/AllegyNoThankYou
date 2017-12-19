@@ -19,14 +19,15 @@ namespace AllegyNoThankYouDAL.UOW
         public UnitOfWork(DbOptions opt)
         {
             DbContextOptions<EASVContext> options;
-            if (opt.Environment == "Development" && String.IsNullOrEmpty(opt.ConnectionString))
+            if (opt.Environment == "Development")
             {
-            
-            options = new DbContextOptionsBuilder<EASVContext>()
-               .UseInMemoryDatabase("TheDB")
-               .Options;
 
+                options = new DbContextOptionsBuilder<EASVContext>()
+                   .UseInMemoryDatabase("TheDB")
+                   .Options;
             }
+
+
             else
             {
                 options = new DbContextOptionsBuilder<EASVContext>()
